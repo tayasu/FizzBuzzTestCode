@@ -1,15 +1,22 @@
 class FizzBuzz
   def at(n)
+    fizz = false
+    buzz = false
     if (n%3) == 0
-      if(n%5) == 0
-        'fizzbuzz'
-      else 
-        'fizz'
-      end
-    elsif (n%5) == 0
-      'buzz'
+      fizz = true
+    end
+    if (n%5) == 0
+      buzz = true
+    end
+    
+    if fizz && buzz
+      return 'fizzbuzz'
+    elsif fizz && !buzz
+      return 'fizz'
+    elsif buzz && !fizz
+      return 'buzz'
     else
-      n
+      return n
     end
   end
 end
